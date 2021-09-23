@@ -1,9 +1,28 @@
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: blueviolet;
-    height: 4rem;
-    font-family: 'Lucida Console';
-    color: white
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(46, 46, 70);
+  box-shadow: 0px 1px 3px black;
+  font-family: "Lucida Console";
+  color: white;
+  padding: 1rem 2%;
+}
+
+button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Lucida Console";
+  font-size: 1.25rem;
+  margin: 1rem 1.5rem;
+}
+
+button:hover {
+  color: cornflowerblue;
+}
+
+button:focus {
+  color: lightpink;
 }
