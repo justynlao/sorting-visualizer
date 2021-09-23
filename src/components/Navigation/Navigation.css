@@ -1,0 +1,9 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: blueviolet;
+    height: 4rem;
+    font-family: 'Lucida Console';
+    color: white
+}
