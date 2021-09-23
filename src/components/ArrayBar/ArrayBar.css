@@ -1,6 +1,14 @@
 .bar {
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
+  display: inline-block;
+  width: 2rem;
+  margin: 0 2px;
+  box-shadow: 2px 1px 2px black;
+}
+
+@media (max-width: 800) {
+  .bar {
+    margin: 5rem 1px;
     width: 1rem;
-    display: inline-block;
-    margin: 0 2px;
+  }
 }

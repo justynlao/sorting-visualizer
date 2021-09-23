@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import ArrayBar from "../../components/ArrayBar/ArrayBar";
 
-const Array: React.FC = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+import "./Array.css";
+
+interface ArrayProps {
+  array: number[];
 }
+
+const Array = ({ array }: ArrayProps) => {
+  return (
+    <div className="array">
+      {array.map((num) => {
+        return <ArrayBar height={num} />;
+      })}
+    </div>
+  );
+};
 
 export default Array;
