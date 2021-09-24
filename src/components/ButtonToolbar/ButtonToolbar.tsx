@@ -15,10 +15,10 @@ const ButtonToolbar = ({
 }: ButtonToolBarProps) => {
   return (
     <footer className="toolbar">
-      <button>Slow</button>
-      <button>Reset</button>
-      <button>Sort</button>
-      <button>Fast</button>
+      <button className="toolbar-btn">Slow</button>
+      <button className="toolbar-btn" onClick={onArrayReset}>Reset</button>
+      <button className="toolbar-btn" onClick={onSort}>Sort</button>
+      <button className="toolbar-btn">Fast</button>
     </footer>
   );
 };

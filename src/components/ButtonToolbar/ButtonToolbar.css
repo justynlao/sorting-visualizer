@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.toolbar button {
+.toolbar-btn {
     width: 4rem;
     height: 4rem;
     background-color: rgb(46, 46, 70);
@@ -19,12 +19,12 @@
     margin: auto 1rem;
 }
 
-.toolbar button:hover {
+.toolbar-btn:hover {
     color: cornflowerblue;
     transform: scale(1.1);
     box-shadow: 3px 3px 4px darkgray;
 }
 
-.toolbar button:active {
+.toolbar-btn:active {
     transform: scale(.98);
 }

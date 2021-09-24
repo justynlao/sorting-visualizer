@@ -2,7 +2,7 @@ import React from "react";
 import "./Navigation.css";
 
 interface NavigationProps {
-  onSortSelect: () => void;
+  onSortSelect: (sortAlgo: string) => void;
 }
 
 const Navigation = ({ onSortSelect }: NavigationProps) => {
@@ -10,11 +10,11 @@ const Navigation = ({ onSortSelect }: NavigationProps) => {
     <nav>
       <h1>Sorting Visualizer</h1>
       <div>
-        <button onClick={onSortSelect}>Bubble</button>
-        <button onClick={onSortSelect}>Selection</button>
-        <button onClick={onSortSelect}>Insertion</button>
-        <button onClick={onSortSelect}>Merge</button>
-        <button onClick={onSortSelect}>Quick</button>
+        <button className="nav-btn" onClick={() => onSortSelect('Bubble')}>Bubble</button>
+        <button className="nav-btn" onClick={() => onSortSelect('Selection')}>Selection</button>
+        <button className="nav-btn" onClick={() => onSortSelect('Insertion')}>Insertion</button>
+        <button className="nav-btn" onClick={() => onSortSelect('Merge')}>Merge</button>
+        <button className="nav-btn" onClick={() => onSortSelect('Quick')}>Quick</button>
       </div>
     </nav>
   );
