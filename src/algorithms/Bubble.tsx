@@ -12,8 +12,10 @@ const bubbleSort = (array: number[]) => {
       }
     }
     indices.push([null, null, null, j]); // Get index of sorted element
+
+    if (j === 1) indices.push([null, null, null, 0]); // Make sure remaining element of array is marked sorted
   }
-  
+
   return indices;
 };
 
