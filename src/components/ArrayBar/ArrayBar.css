@@ -1,10 +1,11 @@
 .bar {
   background-color: cornflowerblue;
   display: inline-block;
-  width: 2rem;
+  width: 4rem;
   margin: 0 2px;
-  box-shadow: 2px 1px 2px black;
-  transition: height 0.2s ease-in;
+  box-shadow: 0 0 1px 1px black;
+  transition: height 0.1s ease-in;
+  border-top: 1px solid rgb(46, 46, 70);
 }
 
 @media (max-width: 800) {
