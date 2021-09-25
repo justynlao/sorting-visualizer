@@ -14,20 +14,20 @@ const Array = ({ array, compare, swap, sorted }: ArrayProps) => {
   return (
     <div className="array">
       {array.map((num, index) => {
-        let barColor = 'cornflowerblue';
+        let barColor = "lightcyan";
         if (compare && (index === compare[0] || index === compare[1])) {
-          barColor = "purple";
+          barColor = "yellow";
         }
 
         if (swap && (index === swap[0] || index === swap[1])) {
-          barColor = "red";
+          barColor = "crimson";
         }
 
         if (sorted && sorted.includes(index)) {
-          barColor = "green";
+          barColor = "mediumspringgreen";
         }
 
-        return <ArrayBar height={num} color={barColor}/>;
+        return <ArrayBar height={num} color={barColor} />;
       })}
     </div>
   );
