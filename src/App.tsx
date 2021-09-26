@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [compare, setCompare] = useState<number[]>([]); // everytime two elements are being compared, set them to the compared
   const [swap, setSwap] = useState<number[]>([]); // when two elements are to be swapped, set them to swap
   const [sorted, setSorted] = useState<number[]>([]); // Whenever an element is sorted, append to the sorted state
-  const [speed, setSpeed] = useState(500);
+  const [speed, setSpeed] = useState(200);
 
   useEffect(() => {
     resetArray();
@@ -44,22 +44,24 @@ const App: React.FC = () => {
 
   const handleSpeedChange = () => {};
 
-  const sortHelper = (arr: any) => {
+  const sortHelper = (arr: any[]) => {
     for (let i = 0; i < arr.length; i++) {
       setTimeout(() => {
         const [first, second, swappedArr, finished] = arr[i];
-        setCompare([first, second]);
         setSwap([]);
+        setCompare([first, second]);
 
-        if (finished !== null) {
-          setSorted((prevState) => [...prevState, finished]);
-        }
-
-        if (swappedArr) {
+        if (swappedArr !== null) {
           setArray(swappedArr);
           if (first !== null || second !== null) {
             setSwap([first, second]);
           }
+        }
+
+        if (finished !== null) {
+          finished.length > 1
+            ? setSorted((prevState) => [...prevState, ...finished])
+            : setSorted((prevState) => [...prevState, finished]);
         }
       }, i * speed);
     }
@@ -71,16 +73,16 @@ const App: React.FC = () => {
         sortHelper(bubbleSort(array));
         break;
       case "Insertion":
-        setArray([...insertionSort(array)]);
+        sortHelper(insertionSort(array));
         break;
       case "Merge":
-        setArray([...mergeSort(array)]);
+        sortHelper(mergeSort(array));
         break;
       case "Quick":
-        setArray([...quickSort(array)]);
+        sortHelper(quickSort(array));
         break;
       case "Selection":
-        setArray([...selectionSort(array)]);
+        sortHelper(selectionSort(array));
     }
   };
 
