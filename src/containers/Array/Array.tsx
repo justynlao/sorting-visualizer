@@ -14,17 +14,17 @@ const Array = ({ array, compare, swap, sorted }: ArrayProps) => {
   return (
     <div className="array">
       {array.map((num, index) => {
-        let barColor = "lightcyan";
+        let barColor = "#b8faff";
         if (compare && (index === compare[0] || index === compare[1])) {
-          barColor = "yellow";
+          barColor = "#faffb8";
         }
 
         if (swap && (index === swap[0] || index === swap[1])) {
-          barColor = "crimson";
+          barColor = "#ff7d7d";
         }
 
         if (sorted && sorted.includes(index)) {
-          barColor = "mediumspringgreen";
+          barColor = "#94ff9f";
         }
 
         return <ArrayBar height={num} color={barColor} />;

@@ -1,30 +1,31 @@
 .toolbar {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    bottom: 5rem;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 5rem;
+  width: 100%;
 }
 
 .toolbar-btn {
-    width: 4rem;
-    height: 4rem;
-    background-color: rgb(46, 46, 70);
-    box-shadow: 1px 1px 3px black;
-    border-radius: 50%;
-    font-family: "Lucida Console";
-    color: white;
-    border: none;
-    margin: auto 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgb(54, 54, 54);
+  box-shadow: 1px 1px 3px black;
+  border-radius: 25%;
+  font-family: "Lucida Console";
+  font-size: 1rem;
+  color: white;
+  border: none;
+  margin: auto 1rem;
 }
 
 .toolbar-btn:hover {
-    color: cornflowerblue;
-    transform: scale(1.1);
-    box-shadow: 3px 3px 4px darkgray;
+  transform: scale(1.1);
+  box-shadow: 3px 3px 4px rgb(10, 10, 10);
 }
 
 .toolbar-btn:active {
-    transform: scale(.98);
+  transform: scale(0.98);
 }

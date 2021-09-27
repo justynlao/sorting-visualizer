@@ -2,14 +2,25 @@
   display: inline-block;
   width: 4rem;
   margin: 0 2px;
-  box-shadow: 0 0 1px 1px black;
+  box-shadow: 0 0 2px 1px black;
   transition: height 0.1s ease-in;
-  border-top: 1px solid rgb(46, 46, 70);
+  border-top: 1px solid rgb(54, 54, 54);
 }
 
-@media (max-width: 800) {
+@media (max-width: 1000px) {
   .bar {
-    margin: 5rem 1px;
+    width: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .bar {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .bar {
     width: 1rem;
   }
 }
