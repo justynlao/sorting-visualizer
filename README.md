@@ -1,6 +1,8 @@
 # Sorting Visualizer &middot; [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) 
 Web Application that visualizes sorting algorithms, including Bubble, Selection, Insertion, Merge, and Quick sorts.
 
+![](/public/sorting-visualizer.png)
+
 ## Installing / Getting started
 
 In order to set up and run locally, run the commands below.
