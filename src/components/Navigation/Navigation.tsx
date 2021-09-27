@@ -55,7 +55,7 @@ const Navigation = ({
         </button>
       </div>
 
-      <div>Speed: {speed}</div>
+      <div className="speed-label">Speed: {speed}</div>
     </nav>
   );
 };
