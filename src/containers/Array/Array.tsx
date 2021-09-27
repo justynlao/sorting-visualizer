@@ -27,7 +27,7 @@ const Array = ({ array, compare, swap, sorted }: ArrayProps) => {
           barColor = "#94ff9f";
         }
 
-        return <ArrayBar height={num} color={barColor} />;
+        return <ArrayBar key={index} height={num} color={barColor} />;
       })}
     </div>
   );

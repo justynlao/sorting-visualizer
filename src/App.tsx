@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+
+// Components
 import Navigation from "./components/Navigation/Navigation";
 import Array from "./containers/Array/Array";
 import ButtonToolbar from "./components/ButtonToolbar/ButtonToolbar";
 
+// Algorithms
 import bubbleSort from "./algorithms/Bubble";
 import insertionSort from "./algorithms/Insertion";
 import mergeSort from "./algorithms/Merge";

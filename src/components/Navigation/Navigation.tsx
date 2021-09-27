@@ -4,7 +4,7 @@ import "./Navigation.css";
 interface NavigationProps {
   isSorting: boolean;
   currentAlgo: string;
-  onSortSelect: (sortAlgo: string) => void;
+  onSortSelect: (algorithm: string) => void;
   speed: string;
 }
 
@@ -12,7 +12,7 @@ const Navigation = ({
   isSorting,
   currentAlgo,
   onSortSelect,
-  speed
+  speed,
 }: NavigationProps) => {
   return (
     <nav>
