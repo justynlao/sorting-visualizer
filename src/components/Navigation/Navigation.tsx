@@ -2,20 +2,60 @@ import React from "react";
 import "./Navigation.css";
 
 interface NavigationProps {
+  isSorting: boolean;
+  currentAlgo: string;
   onSortSelect: (sortAlgo: string) => void;
+  speed: string;
 }
 
-const Navigation = ({ onSortSelect }: NavigationProps) => {
+const Navigation = ({
+  isSorting,
+  currentAlgo,
+  onSortSelect,
+  speed
+}: NavigationProps) => {
   return (
     <nav>
       <h1>Sorting Visualizer</h1>
       <div>
-        <button className="nav-btn" onClick={() => onSortSelect('Bubble')}>Bubble</button>
-        <button className="nav-btn" onClick={() => onSortSelect('Selection')}>Selection</button>
-        <button className="nav-btn" onClick={() => onSortSelect('Insertion')}>Insertion</button>
-        <button className="nav-btn" onClick={() => onSortSelect('Merge')}>Merge</button>
-        <button className="nav-btn" onClick={() => onSortSelect('Quick')}>Quick</button>
+        <button
+          className={currentAlgo === "Bubble" ? "selected-btn" : "nav-btn"}
+          disabled={isSorting}
+          onClick={() => onSortSelect("Bubble")}
+        >
+          Bubble
+        </button>
+        <button
+          className={currentAlgo === "Selection" ? "selected-btn" : "nav-btn"}
+          disabled={isSorting}
+          onClick={() => onSortSelect("Selection")}
+        >
+          Selection
+        </button>
+        <button
+          className={currentAlgo === "Insertion" ? "selected-btn" : "nav-btn"}
+          disabled={isSorting}
+          onClick={() => onSortSelect("Insertion")}
+        >
+          Insertion
+        </button>
+        <button
+          className={currentAlgo === "Merge" ? "selected-btn" : "nav-btn"}
+          disabled={isSorting}
+          onClick={() => onSortSelect("Merge")}
+        >
+          Merge
+        </button>
+        <button
+          className={currentAlgo === "Quick" ? "selected-btn" : "nav-btn"}
+          disabled={isSorting}
+          onClick={() => onSortSelect("Quick")}
+        >
+          Quick
+        </button>
       </div>
+
+      <div>Speed: {speed}</div>
     </nav>
   );
 };

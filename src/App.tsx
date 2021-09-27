@@ -12,16 +12,37 @@ import selectionSort from "./algorithms/Selection";
 import "./App.css";
 
 const App: React.FC = () => {
-  const [currentAlgo, setCurrentAlgo] = useState("");
+  const [currentAlgo, setCurrentAlgo] = useState("Bubble");
   const [array, setArray] = useState<number[]>([]);
   const [compare, setCompare] = useState<number[]>([]); // everytime two elements are being compared, set them to the compared
   const [swap, setSwap] = useState<number[]>([]); // when two elements are to be swapped, set them to swap
   const [sorted, setSorted] = useState<number[]>([]); // Whenever an element is sorted, append to the sorted state
-  const [speed, setSpeed] = useState(200);
+  const [isSorting, setIsSorting] = useState(false);
+  const [speed, setSpeed] = useState(300);
+  const [speedText, setSpeedText] = useState("0");
 
   useEffect(() => {
     resetArray();
   }, [currentAlgo]);
+
+  useEffect(() => {
+    switch (speed) {
+      case 100:
+        setSpeedText("+2");
+        break;
+      case 200:
+        setSpeedText("+1");
+        break;
+      case 300:
+        setSpeedText("+0");
+        break;
+      case 400:
+        setSpeedText("-1");
+        break;
+      case 500:
+        setSpeedText("-2");
+    }
+  }, [speed]);
 
   const resetArray = () => {
     const arr = [];
@@ -34,15 +55,25 @@ const App: React.FC = () => {
     setSorted([]);
   };
 
-  const handleSortSelection = (sortAlgo: string) => {
-    setCurrentAlgo(sortAlgo);
+  const handleSortSelection = (algorithm: string) => {
+    setCurrentAlgo(algorithm);
   };
 
   const handleArrayReset = () => {
     resetArray();
   };
 
-  const handleSpeedChange = () => {};
+  const handleSpeedIncrease = () => {
+    if (speed > 100) {
+      setSpeed(speed - 100);
+    }
+  };
+
+  const handleSpeedDecrease = () => {
+    if (speed < 500) {
+      setSpeed(speed + 100);
+    }
+  };
 
   const sortHelper = (arr: any[]) => {
     for (let i = 0; i < arr.length; i++) {
@@ -63,11 +94,14 @@ const App: React.FC = () => {
             ? setSorted((prevState) => [...prevState, ...finished])
             : setSorted((prevState) => [...prevState, finished]);
         }
+
+        if (i === arr.length - 1) setIsSorting(false);
       }, i * speed);
     }
   };
 
   const handleSort = () => {
+    setIsSorting(true);
     switch (currentAlgo) {
       case "Bubble":
         sortHelper(bubbleSort(array));
@@ -88,11 +122,18 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Navigation onSortSelect={handleSortSelection} />
+      <Navigation
+        isSorting={isSorting}
+        currentAlgo={currentAlgo}
+        onSortSelect={handleSortSelection}
+        speed={speedText}
+      />
       <Array array={array} compare={compare} swap={swap} sorted={sorted} />
       <ButtonToolbar
+        isSorting={isSorting}
         onArrayReset={handleArrayReset}
-        onSpeedChange={handleSpeedChange}
+        onSpeedIncrease={handleSpeedIncrease}
+        onSpeedDecrease={handleSpeedDecrease}
         onSort={handleSort}
       />
     </div>
