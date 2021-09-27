@@ -3,7 +3,7 @@ Web Application that visualizes sorting algorithms, including Bubble, Selection,
 
 ## Installing / Getting started
 
-In order to set up and run on localhost, run the commands below.
+In order to set up and run locally, run the commands below.
 
 ```shell
 git clone https://github.com/justynlao/sorting-visualizer.git
@@ -25,9 +25,9 @@ You will also see any lint errors in the console.
 ## Developing
 
 ### Built With
-React 17.0.2
-TypeScript 4.4.3
-HTML
-CSS
+* React 17.0.2
+* TypeScript 4.4.3
+* HTML
+* CSS
 
 
