@@ -9,9 +9,9 @@ Web Application that visualizes sorting algorithms, including Bubble, Selection,
    2. [Building a Static Version](#buildingstatic)
    3. [Implementing Sorting Animations (Initial Approach)](#implementingsortinitial)
    4. [Implementing Sorting Animations (New Approach)](#implementingsortnew)
-2. [Using the Application](#usingtheapp)
-3. [Installing / Getting Started](#installing)
-4. [Built With](#builtwith)
+   5. [Adding Additional Settings](#additionalsettings)
+2. [Installing / Getting Started](#installing)
+3. [Built With](#builtwith)
 
 ## Implementation Detail
 ### Planning the User Interface <a name="planningui"></a>
@@ -54,11 +54,12 @@ Just like before, each step would track the indices of the two elements being co
 
 Then, in my Array component, as I mapped the array elements, I used the compare/swap/sorted props that were passed down from the root App component to render each ArrayBar with the correct color.
 
-## Using the Application <a name="usingtheapp"></a>
+### Adding Additional Settings <a name="additionalsettings"></a>
+Lastly, I added and implemented settings. These were all relatively simple additions, as I just had to add state in the root App component, and pass handler callback functions along with the props down to the respective child components. There is a currentAlgo state passed down to the navigation bar which would allow the user to click and choose which sorting algorithm they want to visualize. There is also a speed state which is passed down to the button toolbar, which allows the user to increase or decrease the animation speed by up to 100ms both ways.
 
+I also included a isSorting state to make sure that all settings are disabled while a given algorithm is in the process of running. This way, a user would not be able to click a button mid-sort and potentially mess up the sorting.
 
 ## Installing / Getting Started <a name="installing"></a>
-
 In order to set up and run locally, run the commands below.
 
 ```shell
