@@ -1,6 +1,8 @@
 # Sorting Visualizer
 Web Application that visualizes sorting algorithms, including Bubble, Selection, Insertion, Merge, and Quick sorts.
 
+URL: https://justynlao.github.io/sorting-visualizer/
+
 ![](/public/sorting-visualizer.PNG)
 
 ## Table of Contents
